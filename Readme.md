@@ -1,4 +1,4 @@
-## softehter installer
+## softehter installer on ubuntu
 
 - one command installer
 ``` bash
