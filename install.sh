@@ -39,30 +39,10 @@ ln -s /usr/local/vpnserver/vpnserver /usr/bin/vpnserver
 ln -s /usr/local/vpnserver/vpncmd /usr/bin/vpncmd
 echo net.ipv4.ip_forward = 1 | ${SUDO} tee -a /etc/sysctl.conf
 # create vpn server service
-sudo cat >> /lib/systemd/system/vpnserver.service << EOF
-[Unit]
-
-Description=SoftEther VPN Server
-
-After=network.target
-
-[Service]
-
-Type=forking
-
-ExecStart=
-
-ExecStart=/usr/local/vpnserver/vpnserver start
-
-ExecStop=/usr/local/vpnserver/vpnserver stop
-
-[Install]
-
-WantedBy=multi-user.target
-
-EOF
+cp vpnserver.service /lib/systemd/system/
+# start vpn server service
 systemctl start vpnserver.service
-
+# add to start up vpn server service
 systemctl enable vpnserver.service
 
 /usr/local/vpnserver/vpncmd
@@ -73,4 +53,9 @@ echo "samsesh"
 #install softether - end
 
 echo "now run vpncmd and select ro service then for set password on use this command on vpncmd ServerPasswordSet"
+
+sleep 5
+
+echo "check your service status"
+echo "systemctl status vpnserver.service"
 
