@@ -25,6 +25,7 @@ tar xzf softether-vpnserver-v4.38-9760-rtm-2021.08.17-linux-x64-64bit.tar.gz
 cd vpnserver/
 make
 cd ..
+clear
 # move to new dir 
 mv vpnserver /usr/local
 cd /usr/local/vpnserver/
@@ -34,6 +35,8 @@ chmod 700 vpnserver vpncmd
 # start server
 /usr/local/vpnserver/vpnserver start
 # enable ip4 forward
+ln -s /usr/local/vpnserver/vpnserver /usr/bin/vpnserver
+ln -s /usr/local/vpnserver/vpncmd /usr/bin/vpncmd
 echo net.ipv4.ip_forward = 1 | ${SUDO} tee -a /etc/sysctl.conf
 # create vpn server service
 sudo cat >> /lib/systemd/system/vpnserver.service << EOF
@@ -58,6 +61,16 @@ ExecStop=/usr/local/vpnserver/vpnserver stop
 WantedBy=multi-user.target
 
 EOF
-systemctl enable vpnserver.service
 systemctl start vpnserver.service
+
+systemctl enable vpnserver.service
+
 /usr/local/vpnserver/vpncmd
+
+clear
+figlet finish
+echo "samsesh"
+#install softether - end
+
+echo "now run vpncmd and select ro service then for set password on use this command on vpncmd ServerPasswordSet"
+
