@@ -21,6 +21,8 @@ figlet installing softether
 wget https://github.com/SoftEtherVPN/SoftEtherVPN_Stable/releases/download/v4.38-9760-rtm/softether-vpnserver-v4.38-9760-rtm-2021.08.17-linux-x64-64bit.tar.gz
 #extart file
 tar xzf softether-vpnserver-v4.38-9760-rtm-2021.08.17-linux-x64-64bit.tar.gz
+# create vpn server service
+cp vpnserver.service /lib/systemd/system/
 # compiling softether
 cd vpnserver/
 make
@@ -38,8 +40,6 @@ chmod 700 vpnserver vpncmd
 ln -s /usr/local/vpnserver/vpnserver /usr/bin/vpnserver
 ln -s /usr/local/vpnserver/vpncmd /usr/bin/vpncmd
 echo net.ipv4.ip_forward = 1 | ${SUDO} tee -a /etc/sysctl.conf
-# create vpn server service
-cp vpnserver.service /lib/systemd/system/
 # start vpn server service
 systemctl start vpnserver.service
 # add to start up vpn server service
