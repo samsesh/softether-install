@@ -57,7 +57,11 @@ echo "samsesh"
 sleep 5
 
 echo "check your service status"
-echo "systemctl status vpnserver.service"
+sleep 5
+systemctl restart vpnserver.service
+systemctl status vpnserver.service
+sleep 5
+clear
 echo "now run /usr/local/vpnserver/vpncmd and select ro service then for set password on use this command on /usr/local/vpnserver/vpncmd ServerPasswordSet"
 sleep 15
 /usr/local/vpnserver/vpncmd
