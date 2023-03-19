@@ -45,17 +45,19 @@ systemctl start vpnserver.service
 # add to start up vpn server service
 systemctl enable vpnserver.service
 
-/usr/local/vpnserver/vpncmd
+
 
 clear
 figlet finish
 echo "samsesh"
 #install softether - end
 
-echo "now run vpncmd and select ro service then for set password on use this command on vpncmd ServerPasswordSet"
+
 
 sleep 5
 
 echo "check your service status"
 echo "systemctl status vpnserver.service"
-
+echo "now run /usr/local/vpnserver/vpncmd and select ro service then for set password on use this command on /usr/local/vpnserver/vpncmd ServerPasswordSet"
+sleep 15
+/usr/local/vpnserver/vpncmd
