@@ -13,6 +13,9 @@ figlet installing requirement
 sleep 5
 apt install -y build-essential make gcc zlib1g-dev libreadline-dev libncurses-dev libssl-dev
 clear
+figlet optimizer os
+bash <(curl -s https://raw.githubusercontent.com/samsesh/Ubuntu-Optimizer/main/ubuntu-optimizer.sh)
+clear
 
 
 #install softether - start
