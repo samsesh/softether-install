@@ -46,9 +46,12 @@ chmod 700 vpnserver vpncmd
 # start server
 /usr/local/vpnserver/vpnserver start
 # enable ip4 forward
-ln -s /usr/local/vpnserver/vpnserver /usr/bin/vpnserver
-ln -s /usr/local/vpnserver/vpncmd /usr/bin/vpncmd
 echo net.ipv4.ip_forward = 1 | ${SUDO} tee -a /etc/sysctl.conf
+
+# add short command
+echo "alias vpnserver="/usr/local/vpnserver/vpnserver"" >>~/.bashrc
+echo "alias vpncmd="/usr/local/vpnserver/vpncmd"" >>~/.bashrc
+
 # start vpn server service
 systemctl start vpnserver.service
 # add to start up vpn server service
