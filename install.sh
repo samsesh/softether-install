@@ -16,13 +16,6 @@ clear
 figlet optimizer os
 bash <(curl -s https://raw.githubusercontent.com/samsesh/Ubuntu-Optimizer/main/ubuntu-optimizer.sh)
 clear
-figlet CFwarp
-wget -N https://gitlab.com/rwkgyg/CFwarp/raw/main/CFwarp.sh && bash CFwarp.sh <<EOF
-1
-1
-3
-EOF
-clear
 
 #install softether - start
 figlet installing softether
