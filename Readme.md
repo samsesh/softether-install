@@ -15,7 +15,7 @@ service vpnserver start
 ```
 - now run
 ``` bash
-cd /usr/local/vpnserver/ && vpncmd
+cd /usr/local/vpnserver/ && ./vpncmd
 ```
 - and select ro service then for set password on use this command on 
 ``` bash
