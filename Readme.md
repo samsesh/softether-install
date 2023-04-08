@@ -1,4 +1,4 @@
-## softehter installer on ubuntu
+# softehter installer on ubuntu
 
 - one command installer
 ``` bash
@@ -8,12 +8,12 @@ git clone https://github.com/samsesh/softether-install && cd softether-install &
 ``` bash
 tmux new -s softetherInstaller "git clone https://github.com/samsesh/softether-install && cd softether-install &&  bash install.sh"
 ```
-# fisrt run
+## fisrt run
 - start service 
 ``` bash
 service vpnserver start
 ```
--now run
+- now run
 ``` bash
 /usr/local/vpnserver/vpncmd
 ```
