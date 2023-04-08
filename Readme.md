@@ -2,9 +2,9 @@
 
 - one command installer
 ``` bash
-git clone https://github.com/samsesh/softether-install && cd softether-install &&  sh install.sh
+git clone https://github.com/samsesh/softether-install && cd softether-install &&  bash install.sh
 ```
 - install use tmux on one command 
 ``` bash
-tmux new -s softetherInstaller "git clone https://github.com/samsesh/softether-install && cd softether-install &&  sh install.sh"
+tmux new -s softetherInstaller "git clone https://github.com/samsesh/softether-install && cd softether-install &&  bash install.sh"
 ```
