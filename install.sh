@@ -14,9 +14,9 @@ check_os() {
     OS=$(lsb_release -si)
     VERSION=$(lsb_release -sr)
 
-    # Check if the OS is Ubuntu 20.04
-    if [ "$OS" != "Ubuntu" ] || [ "$VERSION" != "20.04" ]; then
-        echo "This script only works on Ubuntu 20.04"
+    # Check if the OS is Ubuntu 
+    if [ "$OS" != "Ubuntu" ] ; then
+        echo "This script only works on Ubuntu "
         exit 1
     fi
 }
