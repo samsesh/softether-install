@@ -5,7 +5,7 @@ check_if_running_as_root() {
         echo "$(tput setaf 1)Error: You must run this script as root!$(tput sgr0)"
         exit 1
     else
-        echo $(tput setaf 2)pritunl installing starting ...$(tput sgr0)
+        echo $(tput setaf 2)softether installing starting ...$(tput sgr0)
     fi
 }
 
@@ -16,7 +16,7 @@ check_os() {
 
     # Check if the OS is Ubuntu 
     if [ "$OS" != "Ubuntu" ] ; then
-        echo "This script only works on Ubuntu "
+        echo $(tput setaf 1)This script only works on Ubuntu $(tput sgr0)
         exit 1
     fi
 }
@@ -81,8 +81,8 @@ install() {
 }
 
 #run
-check_if_running_as_root
 check_os
+check_if_running_as_root
 sysup
 req
 install
